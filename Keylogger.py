@@ -49,9 +49,9 @@ def main():
         data = file.read().replace('\n', '') 
         
     with smtplib.SMTP_SSL("smtp.gmail.com", port, context=context) as server: 
-        server.login("my@gmail.com", password) 
+        server.login("2021CDTRed@gmail.com", password) 
         time.sleep(60)
-        server.sendmail("my@gmail.com", "my@gmail.com", data)
+        server.sendmail("2021CDTRed@gmail.com", "2021CDTRed@gmail.com", data)
 
 
 if __name__ == "__main__":
